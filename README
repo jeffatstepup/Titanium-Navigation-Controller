@@ -1,4 +1,4 @@
 This is a drop in replacement for the Cross-Platform NavigationController written by Kevin Whinnery, we found we were having severe issues getting the CommonJS version of this working on Android, and therefore re-wrote it, this now works as expected, we also implemented an additional function named back.
 
-jeffatstepup - the code in aaron's fork wasn't fully functional. I have completed the back function so that it makes use of the window stack. It would be nice if something like this were built into Titanium one day.
+jeffatstepup - the code in aaron's fork didn't function the way I wanted, so I have changed the back function so that it makes use of the window stack. It would be nice if something like this were built into Titanium one day.
 
