@@ -45,13 +45,20 @@ navigationController.navGroup = {};
 		
 		Ti.API.info(navigationController.windowStack);
 	};
-	navigationController.back = function(w){
-		//store a copy of all the current windows on the stack
-		if(Ti.Platform.osname === 'android') {
-			w.close();
-		}else{
-			navigationController.navGroup.close(w);
-		}
+	
+        navigationController.back = function(){
+	        
+	        if (navigationController.windowStack.length <= 1) {
+	            Ti.API.warn("navigationController: Attempt made to go back from main home page.");
+	            return;
+	        }
+	        
+	        var w = navigationController.windowStack.pop();
+	        if(Ti.Platform.osname === 'android') {
+	            w.close();
+	        }else{
+	            navigationController.navGroup.close(w);
+	        }
 	};
 })();
 
